@@ -23,6 +23,7 @@ entities:
     error_rates:
       duplicate_skus: 0.02
       negative_prices: 0.005
+      missing_values: 0.03
       missing_brands: 0.04
       html_in_text: 0.01
       emojis_in_text: 0.01

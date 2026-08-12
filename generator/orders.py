@@ -30,7 +30,7 @@ def generate_orders(count, error_rates, data_dir):
             qty = qty * -1
             
         record = {
-            "OrderID": f"ORD{fake.unique.random_int(min=100000, max=9999999)}",
+            "OrderID": f"ORD{fake.unique.random_int(min=100000, max=9999999999)}",
             #not the min and max generates the amount and not the range 
             "CustomerID": inject_missing(random.choice(cust_ids), error_rates['missing_customer_ids']),
             "ProductID": random.choice(prod_ids),
@@ -44,3 +44,4 @@ def generate_orders(count, error_rates, data_dir):
     df = pd.DataFrame(data)
     df = inject_duplicate(df, error_rates['duplicates'])
     return df
+
